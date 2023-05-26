@@ -1,0 +1,220 @@
+{% block body %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <a  href="#" style="font-size: 1.5rem; background: #000; color: red; text-decoration: none; margin-left: 20%;">X {{ message }}, {{category}}</a> 
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+    <title>Signup/Login Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(244, 244, 244);
+        }
+        
+        .container {
+            border: 1px solid rgba(81, 131, 229, 1);
+            padding: 20px;
+            width: 650px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        
+        .centered-links {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 10px;
+            
+            
+        }
+        
+        .centered-links a {
+            margin: 0 25px;
+            background-color: rgb(255, 255, 255);
+            text-decoration: none;
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 5px;
+            padding: 10px 20px;
+            display: inline-block;
+           
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        button {
+            width: 75%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(255, 255, 255);
+            border: 1px white;
+            border-radius: 5px;
+        }
+
+        .entry-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(244, 244, 244);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        button {
+            background-color: rgba(143, 172, 246, 1);
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .signup-section,
+        .login-section {
+            display: none;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="centered-links">
+            <a href="#" onclick="showSignup()"><strong>Sign Up</strong></a> 
+            <a href="#" onclick="showLogin()"><strong>Login</strong></a>
+        </div>
+        
+        <div id="show-sign" class="signup-section" style="display: none;">
+            <form  action="/add_user" method="POST"> 
+                <div class="entry-container">
+                    <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                    <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+                    <input type="email" id="email_address" name="email_address" placeholder="Email Address" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+                    <input type="text" id="phone_number" placeholder="Phone Number" name="phone_number" required>
+                    <input type="text" id="emergency_contact" placeholder="Emergency Contact Phone Number" name="emergency_contact" required>
+                    <label for="date_of_birth">Date of Birth:</label>
+                    <input type="date" id="date_of_birth" name="date_of_birth" required>
+                    <label for="gender">Gender:</label>
+                    <select id="gender" aria-placeholder="Gender" name="gender"  required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    
+                    <label for="race">Race:</label>
+                    <select id="race" name="race" required>
+                        <option value="Black">Black</option>
+                        <option value="Asian">Asian</option>
+                        <option value="Native American">Native American</option>
+                        <option value="Hispanic">Hispanic</option>
+                    </select>
+
+                    <label for="marital_status">Marital Status:</label>
+                    <select id="marital_status" name="marital_status" required>
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                        <option value="divorced">Divorced</option>
+                    </select>
+
+                    <label for="marital_issue">Marital Issue:</label>
+                    <select id="marital_issue" name="marital_issue" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+
+                    <label for="alcohol_intake">Alcohol Daily Intake:</label>
+                    <select id="alcohol_intake" name="alcohol_intake" required>
+                        <option value="1">1 Bottle</option>
+                        <option value="2">2 Bottles</option>
+                        <option value="3">3 Bottles</option>
+                        <option value="4">4 Bottles</option>
+                        <option value="5">5 Bottles</option>
+                        <option value="6">6 Bottles</option>
+                        <option value="7">7 Bottles</option>
+                        <option value="8">8 Bottles</option>
+                        <option value="9">9 Bottles</option>
+                        <option value="10">10 Bottles</option>
+                        
+                    </select>
+
+                    <label for="smoking">Smoking Daily Intake:</label>
+                    <select id="smoking" name="smoking" required>
+                        <option value="1">1 Stick Cigarette</option>
+                        <option value="2">2 Sticks Cigarette</option>
+                        <option value="3">3 Sticks Cigarette</option>
+                        <option value="4">4 Sticks Cigarette</option>
+                        <option value="5">5 Sticks Cigarette</option>
+                        <option value="6">6 Sticks Cigarette</option>
+                        <option value="7">7 Sticks Cigarette</option>
+                        <option value="8">8 Sticks Cigarette</option>
+                        <option value="9">9 Sticks Cigarette</option>
+                        <option value="10">10 Sticks Cigarette</option>
+                    </select>
+
+                    <label for="genetic_trait">Any Family History of Hypertension:</label>
+                    <select id="genetic_trait" name="genetic_trait" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+
+                    <label for="working_hour">How Many Hours Do you Work Daily?:</label>
+                    <input id="working_hour" name="working_hour" placeholder="hr/min" required>
+                </div>
+                
+                <div class="button-container">
+                    <button type="submit" style="margin-top: 20px;">Continue</button>
+                </div>
+                
+            </form>
+        </div>
+        
+        <div id="show-login" class="login-section" style="display: none">
+            <form method="POST" action="/login">
+                <div class="entry-container">
+                    <input type="text" id="username"  name="username" placeholder="Username" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                  
+                <div class="button-container">
+                    <button type="submit">Login</button>
+                </div>
+                
+            </form>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            function showSignup() {
+            var showsign = document.getElementById("show-sign");
+            var showlogin = document.getElementById("show-login");
+            showsign.style.display = "block";
+            showlogin.style.display = "none";
+            }
+
+            function showLogin() {
+            var showsign = document.getElementById("show-sign");
+            var showlogin = document.getElementById("show-login");
+            showsign.style.display = "none";
+            showlogin.style.display = "block";
+            }
+        </script>
+    </div>
+{% endblock %}

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard Page</title>
+  <style>
+    /* Shared styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(244, 244, 244);
+    }
+
+    h1, h2, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Desktop styles */
+    .desktop-section {
+      display: flex;
+    }
+
+    .desktop-sidebar {
+      background-color: #ffffff;
+      color: #000000;
+      width: 200px;
+      padding: 20px;
+      height: 125vh;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    
+    .desktop-sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .desktop-sidebar ul li {
+      margin-bottom: 60px;
+      margin-left: 18px;
+    }
+
+    .desktop-sidebar ul li:last-child {
+      margin-bottom: 0;
+    }
+
+    .desktop-sidebar ul li a {
+      color: #000000;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .desktop-content {
+      flex: 1;
+      padding: 40px;
+    }
+
+
+    .content-container {
+      background-color: #9e9999;
+      padding: 30px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      color: #000000;
+      height: 120px;
+      width:250px;
+      border: none;
+      margin-top: 0px;
+    }
+
+    label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+
+    .content-container1 {
+      background-color: rgb(244, 244, 244);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center content horizontally */
+      justify-content: center; /* Center content vertically */
+      text-align: center; /* Center text */
+    }
+
+    .content-container h2 {
+      margin-bottom: 10px;
+    }
+
+    .content-container p {
+      margin: 0;
+    }
+
+    .content-container1 h2 {
+      margin-bottom: 10px;
+    }
+
+    .content-container1 p {
+      margin: 0;
+    }
+
+   
+    .div-spacing {
+      margin: 0;
+      margin-block-start: 50px;
+    }
+
+    .div-spacing p {
+      margin: 0;
+      font-family: "Inter Medium-500", Arial, sans-serif;
+      font-size: 30px;    
+    }
+
+    .div-spacing p span {
+      margin: 0;
+      font-family: "Inter Medium-400", Arial, sans-serif;
+      font-size: 24px; 
+      color: rgba(107, 107, 107, 1);   
+    }
+
+    .plus-circle {
+      background-color: #4646ef;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .image-style {
+      height: 100px;
+      width: 200px;
+      background-color: blue;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px;
+      margin-top: 20px;
+    }
+
+    .flex-item {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    .button {
+      background-color: #007bff;
+      color: #fff;
+      height:198px;
+      width:380px;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .content-container .flex-container {
+      display: flex;
+      align-items: center;
+      margin-top: 0px;
+    }
+
+    .content-container .flex-container p {
+      margin: 0;
+      font-family: "Inter 400-Regular", Arial, sans-serif;
+      font-size: 20px; 
+      color:#f50100; 
+    }
+
+    .content-container .flex-container p span span {
+      color:#007bff; 
+    }
+
+    .content-container .flex-container p span {
+      color:#1db15b; 
+    }
+    
+    .content-container .flex-container img {
+      margin-left: 10px; /* Adjust the margin as needed */
+    }
+
+    .welcome-image {
+      display: flex;
+      align-items: center;
+    }
+
+    .welcome-image img {
+      margin-bottom: 5px;
+      margin-left: 10px;
+    }
+
+    .log-entry {
+      background-color: #fff;
+      padding: 5px;
+      border-radius: 10px;
+      margin-right: 20vh;
+      height: 100vh;
+      width:100vh;
+      
+    }
+
+    .log-entry p {
+      font-family:  "Inter 400-Regular", Arial, sans-serif; 
+      font-size: 24px; 
+      margin-top: 20px; 
+      margin-bottom: 20px;
+    }
+
+    .content-form {
+      border: 1px solid rgba(81, 131, 229, 1);
+      padding: 20px;
+      width: 650px;
+      height: 400px;
+      display: block;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+    .entry_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgb(244, 244, 244);
+      margin: 10px;
+
+      }
+
+    input {
+      width:100px;
+    }
+    
+    .button_submit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    button {
+        background-color: rgb(27, 78, 209);
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 200px;
+        height: 30px;
+    }
+
+    .link_anlaysis {
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    /* Mobile styles */
+    .mobile-section {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      .mobile-section {
+        display: block;
+      }
+
+      .desktop-section {
+        display: none;
+      }
+
+      .mobile-sidebar {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+      }
+
+      .mobile-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .mobile-menu ul li {
+        margin-bottom: 10px;
+      }
+
+      .mobile-menu ul li:last-child {
+        margin-bottom: 0;
+      }
+
+      .mobile-menu ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .mobile-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Desktop view -->
+<div class="desktop-section">
+  <div class="desktop-sidebar">
+      <img class="logo" src="logo.jpg" alt="Logo" width="100%" height="100px">
+    <div class="desktop-menu">
+      <ul>
+        <li><a href="#" onclick="toggleHome()">Home</a></li>
+        <li><a href="#" onclick="toggleDaily()">Daily Log</a></li>
+        <li><a href="#" onclick="toggleLog()">Recent Log</a></li>
+        <li><a href="#" onclick="toggleNews()">Notification</a></li>
+        <li><a href="#" onclick="toggleAnalysis()">Diagnosis Analysis</a></li>
+        <div style="margin-top: 200px; background-color: red;  height: 40px; padding-top: 10px; padding-right:10px; border: 10px; border-radius: 10px; text-align: center;">
+          <li><a href="#" style="color: white;">Logout</a></li>
+        </div>   
+      </ul>
+    </div>
+    
+  </div>
+
+  <div class="desktop-content">
+    <div id="home-content">
+      <div class="welcome-image">
+        <p style="font-family:  Inter 400-Regular, Arial, sans-serif; font-size: 24px; margin-top: 20px; margin-bottom: 20px;" >Good Morning, Samuel</p>
+        <img src="morning.png" alt="morning" width="40px" height="40px">
+      </div>
+
+      <div class="flex-container">
+        <div class="flex-item">
+          <div class="content-container">
+            <div class="flex-container">
+              <p>Pulse Rate</p>
+              <img src="heart.gif" alt="Pulse Rate" width="28px" height="28px">
+            </div>  
+            <div class="div-spacing">
+              <p>93<span>BPM</span></p>
+            </div>      
+          </div>
+        </div>
+
+        <div class="flex-item">
+          <div class="content-container">
+            <div class="flex-container">
+              <p>Systolic Analysis</p>
+              <img src="heart.gif" alt="Systolic Analysis" width="28px" height="28px">
+            </div>
+            <div class="div-spacing">
+              <p>120<span>mmHg</span></p>
+            </div>      
+          </div>
+        </div>
+
+        <div class="flex-item">
+          <div class="content-container">
+            <div class="flex-container">
+              <p>Diastolic Analysis</p>
+              <img src="heart.gif" alt="Diastolic Analysis" width="28px" height="28px">
+            </div>
+            <div class="div-spacing">
+              <p>80<span>mmHg</span></p>
+            </div>       
+          </div>
+        </div>
+      </div>
+    
+      <div class="flex-container">
+        <div class="flex-item">
+          <div class="content-container">
+            <div class="flex-container">
+              <p><span>Sleep</span></p>
+              <img src="sleep.png" alt="Sleep Material Symbols Bed" width="28px" height="28px">
+            </div>
+            <div class="div-spacing">
+              <p>6<span>hr</span> 54<span>min</span></p>
+            </div>        
+          </div>
+        </div>
+        
+        <div class="flex-item">
+          <div class="content-container">
+            <div class="flex-container">
+              <p><span style="color:#0e0ee2">Weight</span></p>
+              <img src="weight.png" alt="Weight" width="28px" height="28px">
+            </div>
+            <div class="div-spacing">
+              <p>80<span>Kg</span></p>
+            </div>         
+          </div>
+        </div>   
+    
+        <div class="flex-item">
+          <div class="content-container">
+            <div class="flex-container">
+              <p style="color:#000000">Working Hour</p>
+              <img src="working-time.png" alt="Weight" width="30px" height="30px">
+            </div>
+            <div class="div-spacing">
+              <p>10<span>hr</span> 30<span>min</span></p>
+            </div>         
+          </div>
+        </div>  
+      </div>
+
+      <div class="content-container1">
+        <h2>Enter Daily Log</h2>
+        <a href="#daily-log-form" class="plus-circle" style="font-size: 203px; text-decoration: none;">&#43;</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="news-container"  style="display: none; text-align: center;">
+    <h2 style="font-family:  Inter 400-Regular, Arial, sans-serif; font-size: 28px; margin-top: 100px; margin-bottom: 20px;">News and Updates</h2>
+    <p style="font-family:  Inter 400-Regular, Arial, sans-serif; font-size: 24px; margin-top: 20px; margin-bottom: 20px;">No news or updates. If you have any news or updates, you will see them here.</p>
+  </div>
+
+  <div id="log-container" class="content-log" style="display: none;">
+    <h2 style="font-family:  Inter 400-Regular, Arial, sans-serif; text-align: center; font-size: 28px; margin-top: 20px; margin-bottom: 20px;">Recent Log</h2>
+    {% for log in logs %}
+    <div class="log-entry">
+      <p>{{ log.date }} - {{ log.description }} <a href="{{ log.link }}" style="text-decoration: none;">Click here to see filled data</a></p>   
+    </div>
+    {% endfor %}
+  </div>
+
+  <div id="daily-log-form" class="content-form" style="display: none;">
+    <h2>Please Fill these details</h2>
+
+    <form>
+      <div class="entry_container">
+        <label for="systolic-analysis">Systolic Analysis</label>
+        <input type="text" id="systolic-analysis" placeholder="120mmHg" name="systolic-analysis" required>
+  
+        <label for="diastolic-analysis">Diastolic Analysis</label>
+        <input type="text" id="diastolic-analysis" placeholder="80mmHg" name="diastolic-analysis" required>
+    
+  
+        <label for="heart-rate">Heart Rate</label>
+        <input type="text" id="heart-rate" placeholder="BPM" name="heart-rate" required>
+       
+  
+        <label for="sleep-rate">Sleep Rate</label>
+        <input type="text" id="sleep-hour" placeholder="6hr" name="sleep-hour" required>
+        <input type="text" id="sleep-min" placeholder="45min" name="sleep-min" required>
+  
+        <label for="weight">Weight</label>
+        <input type="text" id="weight" placeholder="55Kg" name="weight" required>
+      </div>
+      <div class="button_submit">
+        <button type="submit">Done</button>
+      </div>
+      
+    </form>
+  </div>
+
+  <div id="Analysis-log-form" class="content-form" style="display: none;">
+    <h2 style="margin: 10px; margin-top: 50px; text-align: center;">Analysis</h2>
+      <div class="link_anlaysis">
+        <a href="#" style="display: inline-block; text-decoration: none; margin-left: 100px;">1D</a></li>
+        <a href="#" style="display: inline-block; text-decoration: none; margin-left: 100px;">1W</a></li>
+        <a href="#" style="display: inline-block; text-decoration: none;  margin-left: 100px;">1M</a></li>
+        <a href="#" style="display: inline-block; text-decoration: none; margin-left: 100px;">1Y</a></li>
+      </div>
+      <p style="text-align: center; margin-top: 20px; ">Today</p>
+      <div>
+        <img src="#" alt="Analysed Data Graph" width="200px" height="200px text-align: center;">
+      </div>
+  </div>
+</div>
+
+<!-- Mobile view-->
+<div class="mobile-section">
+  <input type="checkbox" id="toggle-menu" />
+  <label for="toggle-menu">&#9776;</label>
+
+  <div class="mobile-sidebar">
+    <img class="logo" src="logo.png" alt="Logo" width="100">
+    <div class="mobile-menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Daily Log</a></li>
+        <li><a href="#">Notification</a></li>
+        <li><a href="#">Recent Diagnosis</a></li>
+        <li><a href="#">Edit Profile</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mobile-content">
+    <h1>Welcome to the Dashboard</h1>
+
+    <div class="content-container">
+      <h2>Enter Daily Log</h2>
+      <a href="#" class="plus-circle">&#43;</a>
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-item">
+        <div class="content-container">
+          <img src="pulse_rate.png" alt="Pulse Rate" width="100">
+          <p>Pulse Rate: 147680mmHg</p>
+        </div>
+      </div>
+      <div class="flex-item">
+        <div class="content-container">
+          <img src="diastolic_analysis.png" alt="Diastolic Analysis" width="100">
+          <p>Diastolic Analysis: 1476120mmHg</p>
+        </div>
+      </div>
+      <div class="flex-item">
+        <div class="content-container">
+          <img src="systolic_analysis.png" alt="Systolic Analysis" width="100">
+          <p>Systolic Analysis: 1476654</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-container">
+      <img src="sleep_material_symbols_bed.png" alt="Sleep Material Symbols Bed" width="100">
+      <p>Sleep Material Symbols Bed: 147780kg</p>
+    </div>
+
+    <div class="content-container">
+      <img src="weight.png" alt="Weight" width="100">
+      <p>Weight</p>
+    </div>
+  </div>
+</div>
+
+  <script>
+    // Mobile menu toggle
+    const toggleMenu = document.getElementById('toggle-menu');
+    const mobileSidebar = document.querySelector('.mobile-sidebar');
+
+    toggleMenu.addEventListener('change', function() {
+      if (toggleMenu.checked) {
+        mobileSidebar.style.display = 'block';
+      } else {
+        mobileSidebar.style.display = 'none';
+      }
+    });
+  </script>
+  <script>
+    function toggleHome() {
+      var homeContent = document.getElementById("home-content");
+      var newsContainer = document.getElementById("news-container");
+      var logContainer = document.getElementById("log-container");
+      var dailylogform = document.getElementById("daily-log-form");
+      var analysisform = document.getElementById("Analysis-log-form")
+      homeContent.style.display = "block";
+      newsContainer.style.display = "none";
+      logContainer.style.display = "none";
+      dailylogform.style.display = "none";
+      analysisform.style.display = "none";
+    }
+
+    function toggleNews() {
+      var homeContent = document.getElementById("home-content");
+      var newsContainer = document.getElementById("news-container");
+      var logContainer = document.getElementById("log-container");
+      var dailylogform = document.getElementById("daily-log-form");
+      var analysisform = document.getElementById("Analysis-log-form")
+      homeContent.style.display = "none";
+      newsContainer.style.display = "block";
+      logContainer.style.display = "none";
+      dailylogform.style.display = "none";
+      analysisform.style.display = "none";
+    }
+
+    function toggleLog() {
+      var homeContent = document.getElementById("home-content");
+      var newsContainer = document.getElementById("news-container");
+      var logContainer = document.getElementById("log-container");
+      var dailylogform = document.getElementById("daily-log-form")
+      var analysisform = document.getElementById("Analysis-log-form");
+      homeContent.style.display = "none";
+      newsContainer.style.display = "none";
+      dailylogform.style.display = "none";
+      logContainer.style.display = "block";
+      analysisform.style.display = "none";
+    }
+
+    function toggleDaily() {
+      var homeContent = document.getElementById("home-content");
+      var newsContainer = document.getElementById("news-container");
+      var logContainer = document.getElementById("log-container");
+      var dailylogform = document.getElementById("daily-log-form");
+      var analysisform = document.getElementById("Analysis-log-form")
+      homeContent.style.display = "none";
+      newsContainer.style.display = "none";
+      logContainer.style.display = "none";
+      dailylogform.style.display = "block";
+      analysisform.style.display = "none";
+    }
+
+    function toggleAnalysis() {
+      var homeContent = document.getElementById("home-content");
+      var newsContainer = document.getElementById("news-container");
+      var logContainer = document.getElementById("log-container");
+      var dailylogform = document.getElementById("daily-log-form");
+      var analysisform = document.getElementById("Analysis-log-form")
+      homeContent.style.display = "none";
+      newsContainer.style.display = "none";
+      logContainer.style.display = "none";
+      dailylogform.style.display = "none";
+      analysisform.style.display = "block";
+
+    }
+  </script>
+</body>
+</html>
