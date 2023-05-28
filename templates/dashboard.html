@@ -206,10 +206,8 @@
     .log-entry {
       background-color: #fff;
       padding: 5px;
-      border-radius: 10px;
-      margin-right: 20vh;
-      height: 100vh;
-      width:100vh;
+
+    
       
     }
 
@@ -422,25 +420,25 @@
     </div>
   </div>
 
-  <div id="news-container"  style="display: none; text-align: center;">
-    <h2 style="font-family:  Inter 400-Regular, Arial, sans-serif; font-size: 28px; margin-top: 100px; margin-bottom: 20px;">News and Updates</h2>
-    <p style="font-family:  Inter 400-Regular, Arial, sans-serif; font-size: 24px; margin-top: 20px; margin-bottom: 20px;">No news or updates. If you have any news or updates, you will see them here.</p>
+  <div id="news-container"  style="display: none; text-align: center; margin-right: 200px;">
+    <h2 style="font-family:  Inter 400-Regular, Arial, sans-serif;  margin-top: 70px; margin-bottom: 20px;">News and Updates</h2>
+    <p style="font-family:  Inter 400-Regular, Arial, sans-serif;  margin-top: 20px; margin-bottom: 20px;">No news or updates. If you have any news or updates, you will see them here.</p>
   </div>
 
-  <div id="log-container" class="content-log" style="display: none;">
-    <h2 style="font-family:  Inter 400-Regular, Arial, sans-serif; text-align: center; font-size: 28px; margin-top: 20px; margin-bottom: 20px;">Recent Log</h2>
+  <div id="log-container" style="display: none; margin-top: 70px;">
+    <h2 style="font-family:  Inter 400-Regular, Arial, sans-serif; text-align: center;  margin-bottom: 20px;">Recent Log</h2>
     {% for log in logs %}
-    <div class="log-entry">
+    <div class="log-entry" style="margin-right: 150px;">
       <p>{{ log.date }} - {{ log.description }} <a href="{{ log.link }}" style="text-decoration: none;">Click here to see filled data</a></p>   
     </div>
     {% endfor %}
   </div>
 
-  <div id="daily-log-form" class="content-form" style="display: none;">
-    <h2>Please Fill these details</h2>
+  <div id="daily-log-form" style="display: none;  text-align: center; margin-top: 50px; margin-right: 200px;">
+    <h2 style="margin: 20px">Please Fill these details</h2>
 
     <form>
-      <div class="entry_container">
+      <div class="entry_container" style="margin: 10px;">
         <label for="systolic-analysis">Systolic Analysis</label>
         <input type="text" id="systolic-analysis" placeholder="120mmHg" name="systolic-analysis" required>
   
@@ -459,16 +457,16 @@
         <label for="weight">Weight</label>
         <input type="text" id="weight" placeholder="55Kg" name="weight" required>
       </div>
-      <div class="button_submit">
+      <div class="button_submit" style="margin-top: 10px;">
         <button type="submit">Done</button>
       </div>
       
     </form>
   </div>
 
-  <div id="Analysis-log-form" class="content-form" style="display: none;">
-    <h2 style="margin: 10px; margin-top: 50px; text-align: center;">Analysis</h2>
-      <div class="link_anlaysis">
+  <div id="Analysis-log-form" style="display: none; margin-right: 150px;">
+    <h2 style="margin: 10px; margin-top: 70px; text-align: center;">Analysis</h2>
+      <div class="link_anlaysis" style="margin-top: 20px;">
         <a href="#" style="display: inline-block; text-decoration: none; margin-left: 100px;">1D</a></li>
         <a href="#" style="display: inline-block; text-decoration: none; margin-left: 100px;">1W</a></li>
         <a href="#" style="display: inline-block; text-decoration: none;  margin-left: 100px;">1M</a></li>
